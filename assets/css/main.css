@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;}
 
 figcaption:hover {
-  color: #424242;
+  color: #353535;
   -moz-transition: none !important;
   -webkit-transition: none !important;
   -ms-transition: none !important;
@@ -40,7 +40,7 @@ figcaption:hover {
 }
 
 figure{
-    color: #424242;
+    color: #353535;
     -moz-transition: none;
     -webkit-transition: none;
     -ms-transition: none;
@@ -52,7 +52,7 @@ figure{
 }
 
 figure:hover {
-  color: #424242;
+  color: #353535;
   -moz-transition: none;
   -webkit-transition: none;
   -ms-transition: none;
@@ -118,7 +118,7 @@ input, select, textarea {
 
 	body {
 		background: #f0f4f4;
-		color: #424242;
+		color: #353535;
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -171,6 +171,12 @@ input, select, textarea {
 		font-size: 1.5em;
 		margin: 0 0 0.25em 0;
 	}
+
+    h5 {
+        font-size: 2.2em;
+        margin: 0 0 0.25em 0;
+    }
+
 
 	strong, b {
 		font-weight: 400;
@@ -1795,7 +1801,7 @@ input, select, textarea {
 	}
 
 	header {
-		margin: 0 0 1em 0;
+		margin: 0 0 5em 0;
 	}
 
 		header > p {
@@ -2198,8 +2204,8 @@ input, select, textarea {
 
 	.wrapper {
 		background: #fff;
-		margin: 0 0 2em 0;
-		padding: 6em 0 6em 0;
+		margin: 0 0 0em 0;
+		padding: 5em 0 2em 0;
 	}
 
 		.wrapper.style2 {
@@ -2210,12 +2216,12 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/bkg.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
 		color: #fff;
 		text-align: center;
+        z-index: 0;
 		padding: 7.5em 0 2em 0;
 	}
 
@@ -2225,7 +2231,6 @@ input, select, textarea {
 			vertical-align: middle;
 			height: 100%;
             z-index: 0;
-            background-image: url("../../images/bkg.jpg");
 		}
 
 		#header .inner {
@@ -2255,6 +2260,12 @@ input, select, textarea {
 			#header h1 a {
 				color: inherit;
 			}
+
+        #header h4 {
+            color: #fff;
+            font-size: 3.5em;
+            line-height: 20px;
+        }
 
 		#header .button {
 			display: inline-block;
@@ -2293,7 +2304,7 @@ input, select, textarea {
 
 		body.homepage #header:after {
 			content: '';
-			background: #1C0920;
+			background: #000000;
 			display: block;
 			position: absolute;
 			left: 0;
@@ -2301,14 +2312,14 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			opacity: 0;
-            -moz-transition: opacity 1.5s ease-in-out;
-            -webkit-transition: opacity 1.5s ease-in-out;
-            -ms-transition: opacity 1.5s ease-in-out;
-            transition: opacity 1.5s ease-in-out;
-            -moz-transition-delay: 0.1s;
-            -webkit-transition-delay: 0.1s;
-            -ms-transition-delay: 0.1s;
-            transition-delay: 0.1s;
+            -moz-transition: opacity 1s ease-in-out;
+            -webkit-transition: opacity 1s ease-in-out;
+            -ms-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+            -moz-transition-delay: 0s;
+            -webkit-transition-delay: 0s;
+            -ms-transition-delay: 0s;
+            transition-delay: 0s;
 		}
 
 	body.homepage.is-preload #header:after {
@@ -2499,7 +2510,7 @@ input, select, textarea {
 	#footer {
 		position: relative;
 		overflow: hidden;
-		padding: 1em 0 1em 0;
+		padding: 1em 0 0em 0;
 		background: #2b252c;
 		color: #fff;
 	}
