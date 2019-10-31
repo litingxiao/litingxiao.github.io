@@ -2204,7 +2204,7 @@ input, select, textarea {
 
 	.wrapper {
 		background: #fff;
-		margin: 0 0 0em 0;
+		margin: 0 0 2em 0;
 		padding: 5em 0 2em 0;
 	}
 
@@ -2217,7 +2217,7 @@ input, select, textarea {
 	#header {
 		position: relative;
 		background-size: cover;
-		background-position: center center;
+		background-position: center top;
 		background-attachment: fixed;
 		color: #fff;
 		text-align: center;
@@ -2543,17 +2543,11 @@ input, select, textarea {
 			color: rgba(128, 128, 128, 0.75);
 			font-size: 0.8em;
 			cursor: default;
-            display: block;
 		}
 
 			#footer .copyright a {
 				color: rgba(128, 128, 128, 0.75);
 			}
-
-            #footer .copyright:before {
-                content: '';
-                display: block;
-            }
 
 				#footer .copyright a:hover{
 					color: rgba(212, 212, 212, 0.85);
@@ -3167,6 +3161,10 @@ input, select, textarea {
                     height: 100%;
                     opacity: 1;
 				}
+                
+                body.homepage #header:before {
+                    display: none;
+                }
 
 				body.homepage #header h1 {
 					font-size: 2.5em;
