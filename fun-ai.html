@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Liting Xiao - Fun AI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+                <a name="top"></a>
+				<div id="header" style="background-image: url('images/ai.jpg'); background-size: cover; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: center top">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1>Fun AI</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+                        <nav id="nav">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-me.html">About Me</a></li>
+                                <li><a href="gw-overview.html">GW Overview</a></li>
+                                <li><a href="research.html">Research</a></li>
+                                <li><a href="fun-ai.html">Fun AI</a></li>
+                                <li><a href="resume.html">Resume</a></li>
+                            </ul>
+                        </nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12 col-12-mobile" id="sidebar">
+								<hr class="first" />
+								<section>
+									<header>
+                                        <center><h5>COVID-19 Forecast</a></h5></center>
+									</header>
+									<p>
+                                    The current pandemic COVID-19 is unraveling rapidly, and is affecting millions globally. Data are pouring in and scientists around the world are tackling COVID-19 head-on in all aspects. I am currently working on a COVID-19 forecast problem, predicting the death toll in the US, as a near-term goal. As the situation evolves, other goals might be added.
+                                    
+                                    <br/><br/>
+                                    Stay tuned for developments and results in the coming weeks to months. This is happening NOW.
+                                    
+                                    </p>
+                                    <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
+								</section>
+								<hr />
+                                
+								<section>
+									<header>
+										<center><h5>Shakespearean Sonnet Generator</h5></center>
+									</header>
+									<p>
+                                    In this project, I built and trained Recurrent Neural Networks (RNNs) and Hidden Markov Models (HMMs) to generate sonnets of Shakespeare's writing style. Models were trained on all 154 Shakespearean sonnets and an additional dataset, Amoretti written by Edmund Spenser, a contemporary Shakespearean poet.<br/><br/>
+                                    
+                                    Shakespeare's sonnets follow very specific patterns and are great for generative models. Format-wise, a sonnet is 14 lines long, splitting into 3 quatrains, each with 4 lines, ended by a couplet of 2 lines. Shakespearean sonnets also have a particular rhyme scheme, "ABAB CDCD EFEF GG". Meter-wise, they follow iambic pentameter, where a stressed syllable is followed by an unstressed syllable. And each line has 10 syllables in total (mostly).
+                                    <br/>
+                                    <center><a class="image fit" style='width: 15%'><img src="images/shakespeare_wordcloud.png" alt="" /></a>Top 50 words in Shakespeare's sonnets.</center>
+                                    <br/>
+                                    
+                                    For RNNs, I trained my models using character-based tokenization and sonnet-based sequencing. My best RNN consists of 3 LSTM hidden layers of 600 units, each accompanied by 20% dropout. The output is a fully-connected dense layer with a softmax nonlinearity. The model is trained to minimize categorical cross-entropy loss with ‘adam’ optimizer.
+                                    <br/><br/>
+                                    Below is one example generated sonnet. In this case, we can see that the poems are not too bad! In terms of sentence structures and phrases. And we see recurring themes/keywords throughout. But they do not follow the specific syllable count, rhyme scheme or iambic pentameter.
+                                    
+                                    <pre style="font-family: monaco; font-size: 16px">
+        Then the powerful king put to the test,
+        Both soul doth say thy show,
+        The worst of worth the words of weather ere:
+        And with the crow of well of thine to make thy large will more.
+
+        Let no unkind, no fair beseechers kill,
+        Though rosy lips and lovely yief.
+        Her wratk doth bind the heartost simple fair,
+        That eyes can see! take heed (dear heart) of this large privilege,
+
+        And she with meek heart doth please all seeing,
+        Or all alone, and look and moan,
+        She is no woman, but senseless stone.
+        But when i plead, she bids me play my part,
+
+        And when i weep, in all alone,
+        That he with meeks but best to be.
+                                    </pre>
+                                    
+                                    For HMMs, I trained my models using word-based tokenization and line-based sequencing. My best HMM contains 32 hidden states.<br/><br/>
+                                    
+                                    Below is one example generated sonnet. In this case, I generated poems that follow the Shakespearean rhyme scheme and syllable count. But poems contain mostly only valid phrases. They are not good poems.
+                                    
+                                    <pre style="font-family: monaco; font-size: 16px">
+        The large numbers must due did be you sweet
+        Love thou have black heaven love hair was stand
+        Beauteous the large least in the building seat
+        Child be numbers to fair fearless men brand
+
+        The happy dress came now would my thy gait
+        It they and that clay all she glory that
+        Thou was me should tears in they art the mate
+        The message and thine once make thine loud at
+
+        Beseechers rack for it miss print said thou
+        Sue glorious mine freshly affections growth
+        Praise to have same feeds in tongue and then how
+        Back seeing the black sail so my is loath
+
+        Thoughts ever in in one in thine been turn
+        True none thou wolf ever or she return
+                                    </pre>
+                                    
+                                    Lastly, I named my Shakespearean sonnet-writing AI, William-wanna-shake-pear. [<em>Github repo: <a href="https://github.com/litingxiao/william-wanna-shake-pear">https://github.com/litingxiao/william-wanna-shake-pear</a></em>]
+                                    <br/><br/>
+                                    <center><a class="image fit" style='width: 20%'><img src="images/william-shakes-pear.jpg" alt="" /></a></center>
+                                    
+                                    <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
+									</p>
+								</section>
+                                
+                                <hr/>
+                                <section>
+                                    <header>
+                                        <center><h5>Computer Graphics</h5></center>
+                                    </header>
+                                    <p>
+                                    <center>[Something I am interested in, but haven't worked on. Yet! Stay tuned.]</center>
+                                    </p>
+                                    <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
+                                </section>
+                                
+                                </div>
+							</div>
+                        </div>
+
+                        
+					</div>
+
+				</div>
+
+            <!-- Footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-12" >
+                        <!-- Contact -->
+                            <section class="contact">
+                                <header>
+                                    <h3>Contact</h3>
+                                </header>
+                            </section>
+                        </div>
+                        <!-- Tweets -->
+                            <section class="col-6 col-12-mobile">
+                                <ul class="divided">
+                                    <li>
+                                        <article class="tweet">
+                                            <center><br>
+                                            Email: <a href="mailto:lxxiao@caltech.edu">lxxiao@caltech.edu</a><br>
+                                            Office: West Bridge 364</center>
+                                        </article>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="col-6 col-12-mobile">
+                                <ul class="divided">
+                                    <li>
+                                        <article class="post stub">
+                                            <article class="tweet">
+                                                <center>
+                                                    Mail:<br>
+                                                    MC 100-36<br>
+                                                    1200 E. California Blvd.<br>
+                                                    Pasadena, CA 91125<br>
+                                                </center>
+                                            </article>
+                                        </article>
+                                    </li>
+                                </ul>
+                            </section>
+                    <!-- Copyright -->
+                        <div class="copyright col-12" >
+                            <ul class="menu">
+                                <li>&copy; Liting Xiao. All rights reserved.</li> <li> Background Image Courtesy: WallpaperAccess  </li> <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            </ul>
+                        </div>
+
+		</div>
+                    
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
