@@ -50,8 +50,38 @@
                                     <header>
                                         <center><h5>PyCBC Search Pipeline for GWs</a></h5></center>
                                     </header>
-                                    <p>
+                                    <p style="text-align: left;">
+                                    I work on the development and operation of one of LIGO's main discovery pipelines - the PyCBC search pipeline for GWs from compact binary coalescences (CBCs). The goal of PyCBC is to <b>identify candidate GW signals in LIGO data</b> and to <b>provide statistical significance of GW candidates</b>.
+                                    <br/><br/>
                                     
+                                    Detecting GWs in a stream of noisy data is a challenging task, since the amplitude of GW signals is comparable to the noise background, if not lower. We thus need to implement various <b>signal processing</b> techniques. At its core, PyCBC performs a <b>matched-filtering</b> search for GWs from CBCs using a bank of template GW waveforms distributed in chosen parameter space.
+                                    <br/><br/>
+                                    
+                                    With GWs from CBCs being well-modeled, matched filtering is the optimal search method. If the detector data are stationary and Gaussian, then the matched-filter signal-to-noise ratio (SNR) would suffice as a detection statistic. However, detector data are in no way stationary or Gaussian. Advanced techniques are required to mitigate or eliminate noise transients. Additional to SNR, we implement two more chi-squared statistics to battle loud noise transients, which essentially compute the signal power and compare it with its ambience. SNR is re-weighted by these chi-squared statistics. Then, for each detector, we only keep triggers with re-weighted SNRs above a certain threshold, which constitute our single detector triggers.
+                                    <br/>
+                                    
+                                    <center><a class="image fit" style='width: 70%'><img src="images/mf.png" alt="" /></a></center>
+                                    <center><figcaption style='width: 70%'>Matched filtering in action. We match a template with the stream of data at every timestamp. If the two match well, we obtain a high SNR at the respective timestamp, and vice versa. This process is performed on all GW waveform templates in the pre-generated template bank.</figcaption></center>
+                                    
+                                    <br/>
+                                    To claim confident detections, a coincidence test is performed once single detector triggers are ready. We combine re-weighted SNRs from all detectors to obtain a network SNR. This network SNR is further re-weighted using a probability distribution map of signal vs. noise over time delay, phase and amplitude, calculated aforehand. This final statistic is what we use as the detection statistic. Coincident triggers with detection statistics above a certain treshold are our final GW candidates.
+                                    <br/><br/>
+                                    
+                                    To obtain statistical significance, false-alarm rates, of GW candidates, we apply a huge amount of time-shifts larger than the time-coincidence window to the data to generate background data that are physically impossible to contain real GWs. We compare the original data to the time-shifted data and obtain false-alarm rates of GW candidates. The false-alarm rate statistic asks the question: "How likely is it to obtain a false positive with a detection statistic as loud as the GW candidate in question?"
+                                    <br/><br/>
+                                    
+                                    A colleague and I are currently working on further improvements to the detection statistic by combining more information about signal coherence and noise incoherence. As a whole, the PyCBC team are actively researching novel ways to boost signal significance and eliminate noise as much as possible.
+                                    <br/><br/>
+                                    
+                                    PyCBC has an online version and an offline version. During observing runs, we operate, monitor and maintain the online version to provide low-latency GW candidate alerts to the EM community for rapid EM follow-ups. Also, we operate PyCBC offline for more precise science statements.
+                                    <br/><br/>
+                                    
+                                    <center><a class="image fit" style='width: 75%'><img src="images/gwtc1.png" alt="" /></a></center>
+                                    <center><figcaption style='width: 75%'>Gravitational-Wave Transient Catalog-1. The 10 binary black holes and 1 binary neutron star observed during LIGO's 1st and 2nd observing runs. All events were observed by PyCBC. </figcaption></center>
+                                    
+                                    <br/>
+<pre>
+[<em>PyCBC website: <a href="https://pycbc.org" target="blank"> https://pycbc.org</a>      Github repo: <a href="https://github.com/gwastro/pycbc" target="blank"> https://github.com/gwastro/pycbc</a></em>]</pre>
                                     
                                     </p>
                                     <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
@@ -62,8 +92,19 @@
                                     <header>
                                         <center><h5>Bilby: A Bayesian Inference Library for GW Astronomy</h5></center>
                                     </header>
-                                    <p>
+                                    <p style="text-align: left;">
                                     
+                                    Bayesian inference is essential in studying GW science. Once GW detections have been made, we apply Bayesian inference to extract source parameters (<b>parameter estimation</b>). And this, in turn, enables us to study the astrophysical properties of the individual sources of GWs. We also use Bayesian inference to decide between models (<b>model selection</b>), such as selecting between a model with precessing spins and one with aligned spins for a compact binary. In addition, Bayesian inference is the tool to extract hyper-parameters for studies of population properties (<b>hierarchical Bayesian inference</b>).
+                                    <br/><br/>
+                                    
+                                    Bilby is module designed for GW science, but also go beyond it. I am a developer of the Bilby module and have utilized Bilby to analyze LIGO's GWTC-1 events. My current effort involving Bilby is to study higher-order modes of GWs through Bilby analysis of various events.
+                                    <br/>
+                                    
+                                    <center><a class="image fit" style='width: 50%'><img src="images/bilby.png" alt="" /></a></center>
+                                    <center><figcaption style='width: 50%'>Corner plot of the 15 source parameters of GW150914 generated by Bilby.</figcaption></center>
+                                    
+                                    <br/>
+                                    [Github repo: <a href="https://git.ligo.org/lscsoft/bilby/" target="blank"> https://git.ligo.org/lscsoft/bilby/</a></em>]
                                     
                                     </p>
                                     <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
@@ -74,8 +115,19 @@
                                     <header>
                                         <center><h5>ROMAN: Reduced-Order (GW Waveform) Modeling with Artificial Neurons</h5></center>
                                     </header>
-                                    <p>
-                                        
+                                    <p style="text-align: left;">
+                                    
+                                    We pursue a fast GW waveform modeling method, compared to the traditional forward modeling. We first represent GW waveforms as weighted sums over <b>reduced bases</b>. Waveform modeling will be performed directly in these reduced bases. We then train <b>a deep neural network</b> to map GW source parameters into the basis coefficients. This work is greatly beneficial to the backward problem, the inference problem, where bulk generation of accurate GW waveform templates is needed to perform Bayesian inference. This work also facilitates prospect studies for future detectors like LISA (LIGO-In-Space).
+                                    <br/><br/>
+                                    
+                                    Current progress in this project is happening in both directions: to project GW waveforms onto smoother reduced bases that include more dimensions; to build and train a deep neural network that achieves sufficient waveform reconstruction accuracy in higher dimensions.
+                                    <br/>
+                                    
+                                    <center><a class="image fit" style='width: 50%'><img src="images/ann.png" alt="" /></a></center>
+                                    <center><figcaption style='width: 50%'>Architecture of an example artificial neural network.</figcaption></center>
+                                    
+                                    <br/>
+                                    [<em>Project repo is currently private.</em>]
                                         
                                     </p>
                                 </section>
