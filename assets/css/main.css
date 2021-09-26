@@ -1856,6 +1856,12 @@ input, select, textarea {
 				width: auto;
 			}
 
+        img.rounded {
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 0 4em 0;
+        }
+
 /* List */
 
 	ul {
@@ -2233,6 +2239,7 @@ input, select, textarea {
             z-index: 0;
 		}
 
+
 		#header .inner {
 			position: relative;
 			z-index: 1;
@@ -2240,6 +2247,7 @@ input, select, textarea {
 			display: inline-block;
 			vertical-align: middle;
 		}
+
 
 		#header header {
 			display: inline-block;
@@ -2269,13 +2277,17 @@ input, select, textarea {
 
 		#header .button {
 			display: inline-block;
+            border: none;
 			border-radius: 100%;
-			width: 4.5em;
-			height: 4.5em;
-			line-height: 4.5em;
+			width: 10%;
+			height: 0%;
+            bottom: 80%;
+            left: 45%;
+            line-height: -2em;
 			text-align: center;
 			font-size: 1.25em;
-			padding: 0;
+			padding: 0em;
+            background-color: none;
 		}
 
 		#header hr {
@@ -2299,7 +2311,8 @@ input, select, textarea {
 	}
 
 		body.homepage #header h1 {
-			font-size: 4em;
+            margin: 0.8em 0 -0.8em 0;
+			font-size: 3.5em;
 		}
 
 		body.homepage #header:after {
@@ -2858,6 +2871,7 @@ input, select, textarea {
 			header > p {
 				font-size: 1.25em;
 			}
+            
 
 		/* Image */
 
