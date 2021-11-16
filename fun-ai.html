@@ -76,7 +76,7 @@
                                     <center><a class="image fit" style='width: 15%'><img src="images/shakespeare_wordcloud.png" alt="" /></a>Top 50 words in Shakespeare's sonnets.</center>
                                     <br/>
                                     
-                                    For RNNs, I trained my models using character-based tokenization and sonnet-based sequencing. My best RNN consists of 3 LSTM hidden layers of 600 units, each accompanied by 20% dropout. The output is a fully-connected dense layer with a softmax nonlinearity. The model is trained to minimize categorical cross-entropy loss with ‘adam’ optimizer.
+                                    For RNNs, I trained my models using character-based tokenization and sonnet-based sequencing. My best RNN consists of 3 LSTM hidden layers of 600 units, each accompanied by 20% dropout. The output is a fully-connected dense layer with a softmax nonlinearity. The model is trained to minimize categorical cross-entropy loss with the ‘adam’ optimizer.
                                     <br/><br/>
                                     Below is one example generated sonnet. In this case, we can see that the poems are not too bad! In terms of sentence structures and phrases. And we see recurring themes/keywords throughout. But they do not follow the specific syllable count, rhyme scheme or iambic pentameter.
                                     
@@ -131,8 +131,31 @@
                                     <center><a class="image fit" style='width: 20%'><img src="images/william-shakes-pear.jpg" alt="" /></a></center>
                                     
                                     <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
+                                    <hr/>
 									</p>
 								</section>
+                                
+                                <section>
+                                    <header>
+                                        <center><h5>High Frequency Price Prediction of Index Futures</h5></center>
+                                    </header>
+                                    <p style="text-align: left;">
+                                    
+                                    In this project, I use 500ms aggregate high frequency market order book data of a futures contract to predict the probabilities of future 1-second price movements. To prevent timeseries modeling, the timestamps of the dataset are scrambled to make this a machine learning problem.
+
+                                    <br/><br/>
+                                    
+                                    This binary classification problem that requires class probability outputs serves as a playground to familiarize me with the complete pipeline for such a machine learning project. I learned, implemented, and tested various models including linear regression with regularization, logistic regression with cross validation, support vector machine regressor, decision trees and random forests, and neural networks. Before model building and training, I explored the training set, filled in missing values, engineered new features, and scaled features. I also learned about model selection through different evaluation metrics. 
+                                    
+                                    <br/><br/>
+                                    
+                                    
+                                    <br/>
+                                    [<em>Github: <a href="https://github.com/litingxiao/William-wanna-shake-pear" target="blank">https://github.com/litingxiao/William-wanna-shake-pear</a></em>]
+                                    <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
+                                    <hr/>
+                                    </p>
+                                </section>
                                 
                                 <!-- <hr/>
                                 <section>
