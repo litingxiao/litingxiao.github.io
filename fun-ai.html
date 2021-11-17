@@ -144,16 +144,17 @@
                              </header>
                              <p style="text-align: left;">
                              
-                             
-
+                             In this project, I observe and interpret the MovieLens dataset both in the exploratory data analysis phase and after matrix factorization using different singular value decomposition (SVD) methods. The MovieLens dataset consists of 100,000 ratings from 943 users on 1682 movies, where each user has rated at least 20 movies.
                              <br/><br/>
                              
-                             
-                             
+                             I first group together duplicate entries to clean the data. In data exploration, I find out that the data are skewed towards higher ratings and fewer number of ratings. And after accounting for these 2 factors, I observe that the most popular and the best movies have 7 overlaps, which makes sense.
                              <br/><br/>
                              
+                             I then implement 3 methods to perform SVD: self-written regular SVD, self-written SVD with added bias terms for each user and movie to model global tendencies of the various users and movies, and an off-the-shelf implementation "Surprise SVD". After obtaining the user and movie matrices, I project the matrices into 2D for easy visualizations. In general, I think the 2D visualizations are still very randomly distributed in space, but highly rated movies seem to cluster near the origin.
                              
-                             <br/>
+                             <center><a class="image fit" style='width: 50%'><img src="images/2d_gen.png" alt="" /></a></center>
+                             
+                             <br/><br/>
                              [<em>Github: <a href="https://github.com/litingxiao/MovieLens-Viz" target="blank">https://github.com/litingxiao/MovieLens-Viz</a></em>]
                              <a href="#top" style="float: right; font-size: 16px;">Back to top</a><br/>
                              <hr/>
